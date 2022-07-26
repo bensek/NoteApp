@@ -26,6 +26,7 @@ import com.parach.noteapp.components.NoteButton
 import com.parach.noteapp.components.NoteInputText
 import com.parach.noteapp.data.NotesDataSource
 import com.parach.noteapp.models.Note
+import com.parach.noteapp.util.formatDate
 import java.time.format.DateTimeFormatter
 
 @ExperimentalComposeUiApi
@@ -119,7 +120,7 @@ fun NoteRow(
             style = MaterialTheme.typography.subtitle2)
             Text(text = note.description,
                 style = MaterialTheme.typography.subtitle1)
-            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
+            Text(text = formatDate(note.entryDate.time),
                 style = MaterialTheme.typography.caption)
         }
 
